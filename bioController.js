@@ -1,4 +1,4 @@
-const Bio = require("./bioModel");
+const Bio = require("./models/bioModel");
 
 exports.index = function (req, res) {
   Bio.get(function (err, bio) {
