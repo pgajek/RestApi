@@ -1,5 +1,7 @@
 const express = require("express");
 const apiRoutes = require("./routes/bioRoutes");
+const userRoutes = require("./routes/userRoutes");
+
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
@@ -15,9 +17,14 @@ app.use(
 
 app.use(bodyParser.json());
 app.use("/api", apiRoutes);
+app.use("/users", userRoutes);
 
 const dbPath = "mongodb://localhost/firstrestapi";
-const options = { useNewUrlParser: true, useUnifiedTopology: true };
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+};
 const mongo = mongoose.connect(dbPath, options);
 
 mongo.then(

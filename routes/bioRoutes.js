@@ -16,5 +16,6 @@ router
   .patch(bioController.update)
   .put(bioController.update)
   .delete(bioController.delete);
+// methods creeated at bioController
 
 module.exports = router;
