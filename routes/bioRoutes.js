@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const bioController = require("../bioController");
+const bioController = require("../api/bioController");
 
 router.get("/", function (req, res) {
   res.json({
